@@ -3,8 +3,8 @@ import plotly.graph_objects as go  # Import the data visualization tool plotly
 from plotly.subplots import make_subplots  # Import make_subplots for subplots
 import yfinance as yf
 
-natgas = yf.Ticker("NG=F")
-df = natgas.history(interval="1d", start="2024-01-02")
+# natgas = yf.Ticker("NG=F")
+# df = natgas.history(interval="1d", start="2024-01-02")
 
 
 # loading dataset
