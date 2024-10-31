@@ -1,3 +1,5 @@
+[![Notebook](https://github.com/nogibjj/SiMinL_Week9/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/SiMinL_Week9/actions/workflows/hello.yml)
+
 # SiMinL_MiniProj9
 
 # Google Collab Link
