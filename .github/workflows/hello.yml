@@ -1,4 +1,5 @@
-name: CI
+
+name: Notebook
 on:
   push:
     branches: [ "main" ]
@@ -9,23 +10,27 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: install packages
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11.5'
+
+      - name: Install dependencies
         run: make install
-      - name: lint
+
+      - name: Make lint
         run: make lint
-      - name: extract 
-        run: make extract 
-      - name: transform_load
-        run: make transform_load 
-      - name: query
-        run: make query
-      - name: test
-        run: make test
+        
       - name: format
         run: make format
-      - name: generate_and_push
-        run: make generate_and_push
-      - name: deploy
-        run: make deploy
+
+      - name: Run Main File
+        run: python main.py
+
+      - name: Run tests
+        run: make test
